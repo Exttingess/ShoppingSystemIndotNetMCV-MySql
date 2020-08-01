@@ -1,0 +1,42 @@
+﻿@model MvcApplication1.Models.Cart
+
+@{
+    Layout = null;
+}
+
+
+<div id="cart" style="background-color: #e3e3e3;padding: 10px; text-align:center; background-color:skyblue">
+
+    <div style="float:left;">
+        <p>
+            <a href="Index" style="color:green;">商城主页</a>
+        </p>
+    </div>
+
+
+
+    <span class="caption">
+        <b>购物车明细：</b>
+        @if (Model != null)
+        {
+            @Model.Lines.Sum(x => x.Quantity) <span>件,</span>
+            @Model.ComputeTotalPrice().ToString("c")
+        }
+        
+    </span>
+    
+    @Html.ActionLink("结算", "CartIndex", "Home", new {returnUrl = Request.Url.PathAndQuery}, null)
+    &nbsp;
+    @Html.ActionLink("清空", "EmptyCart", "Home", new {returnUrl = Request.Url.PathAndQuery}, null)
+
+
+    <div style="float:right;">
+        <p>
+            <a href="Account" style="color:red;">我的账户</a>
+        </p>
+    </div>
+    
+    
+
+</div>
+

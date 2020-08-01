@@ -1,0 +1,33 @@
+﻿
+*{
+    margin:0;
+    padding:0;
+}
+
+h1 {
+    color: red;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+h2{
+    float:right;
+    color:blue;
+    display:inline-block;
+}
+
+table {
+    max-width: 1000px;
+    border-spacing: 2px;
+    border-collapse: initial;
+    display: table;
+}
+
+table td {
+    padding: 10px;
+    min-width: 50px;
+    box-sizing: border-box;
+    background-color:lightyellow;
+}
+
+

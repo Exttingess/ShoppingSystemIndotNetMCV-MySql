@@ -1,0 +1,20 @@
+﻿*{
+    margin:0;
+    padding:0;
+}
+h1{
+    text-align:center;
+    color:blue;
+}
+#d1{
+    width:400px;
+    margin:0 auto;
+}
+h4{
+    color:red;
+}
+#d2{
+    padding:100px;
+    width:800px;
+    margin:0 auto;
+}

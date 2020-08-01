@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="~/css/style.css">
+
+
+<div class="login-container">
+    <h1>用户登陆</h1>
+
+    <div class="connect">
+        <p>Qbao.com</p>
+    </div>
+
+    <form action="Login" method="post" id="loginForm">
+        <div>
+            <input type="text" name="name" class="username" placeholder="用户名" autocomplete="off" />
+        </div>
+        <div>
+            <input type="password" name="passwd" class="password" placeholder="密码" oncontextmenu="return false" onpaste="return false" />
+        </div>
+        
+
+        <div>
+            <input type="text" name="vcode" style="width:100px" placeholder="验证码" />
+
+            <a href="javascript:;" onclick="reloadcode();"><img id="safecode" src="/Login/CreateValidate" alt="Validate" /></a>
+            <a onclick="reloadcode();" style="font-size:14px;">换一张</a>
+        </div>
+        
+
+        <button id="submit" type="submit">登 陆</button>
+    </form>
+
+    <a href="RegIndex">
+        <button type="button" class="register-tis">还有没有账号？</button>
+    </a>
+
+</div>
+
+
+
+
+
+
+<script>
+    function reloadcode() {
+        var verify = document.getElementById('safecode');
+        verify.setAttribute('src', '/Login/CreateValidate?' + Math.random());
+    }
+</script>
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/common.js"></script>
+<!--背景图片自动更换-->
+<script src="~/js/supersized.3.2.7.min.js"></script>
+<script src="~/js/supersized-init.js"></script>
+<!--表单验证-->
+<script src="~/js/jquery.validate.min.js?var1.14.0"></script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+    <p>本商城一切解释权，规Q包商城官方所有。如有疑惑请联系3413141112@@Qbao.com。</p>
+
+</div>

@@ -1,0 +1,45 @@
+﻿@model MvcApplication1.Models.Product
+
+<link rel="stylesheet" href="~/css/mainviewstyle.css">
+@section styles
+{
+    <link href="~/Content/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+}
+
+@{ try
+    {
+
+
+        <h1>商品详情</h1>
+        <div id="d1" >
+            <h3>@Model.Name</h3>
+            <p><img src="@Model.ImageUrl" style="width: 400px;height: 400px;" /></p>
+            <p>@Model.Description</p>
+            <h4>@Model.Price.ToString("c")</h4>
+            @using (Html.BeginForm("AddToCart", "Home"))
+            {
+                @Html.HiddenFor(p => p.Id)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                <input type="submit" value="+放入购物车" />}
+
+        </div>
+
+    }
+    catch (Exception e)
+    {
+        <p>@e</p>
+    }
+}
+
+<div style="height:100px;margin:0 auto;width:600px;" >
+    <h2>声明：</h2>
+    <p>
+
+        Qbao商城为第三方交易平台及互联网信息服务提供者，Qbao（含网站、客户端等）所展示的商品/服务的标题、价格、详情等信息内容系由店铺经营者发布，其真实性、准确性和合法性均由店铺经营者负责。Qbao提醒用户购买商品/服务前注意谨慎核实。如用户对商品/服务的标题、价格、详情等任何信息有任何疑问的，请在购买前通过阿里旺旺与店铺经营者沟通确认；Qbao存在海量店铺，如用户发现店铺内有任何违法/侵权信息，请立即向Qbao举报并提供有效线索。
+    </p>
+</div>
+
+            <div id="d2" 
+                 >
+                <img src="~/images/ba3.jpg" width="600" />
+            </div>

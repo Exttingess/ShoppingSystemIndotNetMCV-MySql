@@ -1,0 +1,37 @@
+﻿@model MvcApplication1.Models.Cart
+@{
+    ViewBag.Title = "PayIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    p {
+        font-size: large;
+        color: red;
+    }
+</style>
+@section styles
+{
+    <link href="~/Content/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+}
+<body >
+    <div style="padding:100px;margin:0 auto;background-color:lightpink;" class="col-md-4 column productbox">
+        <h2>需要支付的金额:</h2>
+        <p>@ViewBag.sum</p>
+        <hr />
+        <h2>账户余额:</h2>
+        <p>@ViewBag.num</p>
+        <hr />
+    </div>
+
+
+
+
+
+    <div style="margin:0 auto;background-color:red;padding:20px" class="col-md-4 column productbox">
+        <p>
+
+            <a style="font-size:40px;color:white" href="Payed">确认支付</a>
+        </p>
+
+    </div>
+</body>

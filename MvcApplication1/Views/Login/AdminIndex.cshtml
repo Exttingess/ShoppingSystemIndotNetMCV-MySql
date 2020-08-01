@@ -1,0 +1,55 @@
+﻿@model MvcApplication1.Models.ProductsListVm
+@{
+    ViewBag.Title = "AdminIndex";
+    Layout = null;
+}
+
+<h1>管理员页面</h1>
+<h2><a href="Index">注销</a></h2>
+
+
+<link rel="stylesheet" href="~/css/adminstyle.css">
+
+<div>
+    <hr />
+    <table>
+        <tr>
+            <td>id</td>
+            <td>名称</td>
+            <td>描述</td>
+            <td>价格</td>
+            <td>图片URL</td>
+            <td>操作</td>
+        </tr>
+        @{ try
+            {
+                foreach (var item in Model.Products)
+                {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Price</td>
+                    <td>@item.ImageUrl</td>
+                    <td><a href="#">编辑</a></td>
+
+                </tr>
+                }
+            }
+            catch (Exception e) { throw e; }
+        }
+    <tr>
+        <td></td>
+
+        <td></td>
+        <td><a href="#">添加</a></td>
+        <td></td>
+        <td></td>
+
+
+    </tr>
+
+    </table>
+
+    <hr />
+</div>
